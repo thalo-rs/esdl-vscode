@@ -20,7 +20,7 @@
           "name": "keyword.event.esdl"
         },
         "2": {
-          "name": "variable.event.esdl"
+          "name": "support.type.event.esdl"
         },
         "3": {
           "name": "punctuation.operation.esdl"
@@ -41,7 +41,7 @@
           "name": "keyword.type.esdl"
         },
         "2": {
-          "name": "variable.type.esdl"
+          "name": "support.type.type.esdl"
         },
         "3": {
           "name": "punctuation.operation.esdl"
@@ -86,7 +86,7 @@
     "command": {
       "begin": "\\s([a-z0-9_]*)\\s*(\\()\\s*",
       "beginCaptures": {
-        "1": { "name": "variable.other.esdl" },
+        "1": { "name": "entity.name.function.esdl" },
         "2": { "name": "meta.brace.round.esdl" }
       },
       "end": "\\s*(\\))(?=:)",
