@@ -1,9 +1,9 @@
-# ESL VSCode Syntax
+# ESDL VSCode Syntax
 
-Syntax support for [esl](https://github.com/thalo-rs/esl) files.
+Syntax support for [esdl](https://github.com/thalo-rs/esdl) files.
 
 ### Installation
 
 This extension is not yet published. To install locally, clone into `<user home>/.vscode/extensions`.
 
-It should automatically work with any `.esl` file.
+It should automatically work with any `.esdl` file

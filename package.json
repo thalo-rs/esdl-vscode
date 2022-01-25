@@ -1,6 +1,6 @@
 {
-    "name": "esl",
-    "displayName": "esl",
+    "name": "esdl",
+    "displayName": "esdl",
     "description": "Event Sourcing Schema Definition Language",
     "version": "0.0.1",
     "engines": {
@@ -12,22 +12,22 @@
     "contributes": {
         "languages": [
             {
-                "id": "esl",
+                "id": "esdl",
                 "aliases": [
-                    "ESL",
-                    "esl"
+                    "ESDL",
+                    "esdl"
                 ],
                 "extensions": [
-                    ".esl"
+                    ".esdl"
                 ],
                 "configuration": "./language-configuration.json"
             }
         ],
         "grammars": [
             {
-                "language": "esl",
-                "scopeName": "source.esl",
-                "path": "./syntaxes/esl.tmLanguage.json"
+                "language": "esdl",
+                "scopeName": "source.esdl",
+                "path": "./syntaxes/esdl.tmLanguage.json"
             }
         ]
     }
