@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "name": "ESDL",
+  "name": "ESL",
   "patterns": [
     {
       "include": "#event-definition"
@@ -17,61 +17,69 @@
       "begin": "\\b(event)\\b\\s\\s*([A-Z][A-Za-z0-9]*)\\s*({)\\s*",
       "beginCaptures": {
         "1": {
-          "name": "keyword.event.esdl"
+          "name": "keyword.event.esl"
         },
         "2": {
-          "name": "support.type.event.esdl"
+          "name": "support.type.event.esl"
         },
         "3": {
-          "name": "punctuation.operation.esdl"
+          "name": "punctuation.operation.esl"
         }
       },
       "end": "\\s*(})",
       "endCaptures": {
         "1": {
-          "name": "punctuation.operation.esdl"
+          "name": "punctuation.operation.esl"
         }
       },
-      "patterns": [{ "include": "#field" }]
+      "patterns": [
+        {
+          "include": "#field"
+        }
+      ]
     },
     "type-definition": {
       "begin": "\\b(type)\\b\\s\\s*([A-Z][A-Za-z0-9]*)\\s*({)\\s*",
       "beginCaptures": {
         "1": {
-          "name": "keyword.type.esdl"
+          "name": "keyword.type.esl"
         },
         "2": {
-          "name": "support.type.type.esdl"
+          "name": "support.type.type.esl"
         },
         "3": {
-          "name": "punctuation.operation.esdl"
+          "name": "punctuation.operation.esl"
         }
       },
       "end": "\\s*(})",
       "endCaptures": {
         "1": {
-          "name": "punctuation.operation.esdl"
+          "name": "punctuation.operation.esl"
         }
       },
-      "patterns": [{ "include": "#field" }]
+      "patterns": [
+        {
+          "include": "#field"
+        }
+      ]
     },
     "aggregate-definition": {
       "begin": "\\b(aggregate)\\b\\s\\s*([A-Z][A-Za-z0-9]*)\\s*({)\\s*",
       "beginCaptures": {
         "1": {
-          "name": "keyword.aggregate.esdl"
+          "name": "keyword.aggregate.esl"
         },
         "2": {
-          "name": "variable.aggregate.esdl"
+          "name": "variable.aggregate.esl"
         },
         "3": {
-          "name": "punctuation.operation.esdl"
+          "name": "punctuation.operation.esl"
         }
       },
       "end": "\\s*(})",
       "endCaptures": {
         "1": {
-          "name": "punctuation.operation.esdl"
+          "name": "punctuation.operation.esl"
         }
       },
       "patterns": [
@@ -86,24 +94,38 @@
     "command": {
       "begin": "\\s([a-z0-9_]*)\\s*(\\()\\s*",
       "beginCaptures": {
-        "1": { "name": "entity.name.function.esdl" },
-        "2": { "name": "meta.brace.round.esdl" }
+        "1": {
+          "name": "entity.name.function.esl"
+        },
+        "2": {
+          "name": "meta.brace.round.esl"
+        }
       },
       "end": "\\s*(\\))(?=:)",
       "endCaptures": {
-        "1": { "name": "meta.brace.round.esdl" }
+        "1": {
+          "name": "meta.brace.round.esl"
+        }
       },
-      "patterns": [{ "include": "#params" }]
+      "patterns": [
+        {
+          "include": "#params"
+        }
+      ]
     },
     "params": {
       "end": "\\s*,|\\)",
-      "patterns": [{ "include": "#param" }]
+      "patterns": [
+        {
+          "include": "#param"
+        }
+      ]
     },
     "command-return": {
       "begin": "(:)\\s*",
       "beginCaptures": {
         "1": {
-          "name": "punctuation.colon.esdl"
+          "name": "punctuation.colon.esl"
         }
       },
       "end": "(?=\\s[a-z0-9_]*)|(?=})",
@@ -111,11 +133,15 @@
         {
           "begin": "(\\()\\s*",
           "beginCaptures": {
-            "1": { "name": "meta.brace.round.esdl" }
+            "1": {
+              "name": "meta.brace.round.esl"
+            }
           },
           "end": "\\s*(\\))",
           "endCaptures": {
-            "1": { "name": "meta.brace.round.esdl" }
+            "1": {
+              "name": "meta.brace.round.esl"
+            }
           },
           "patterns": [
             {
@@ -123,7 +149,9 @@
             }
           ]
         },
-        { "include": "#custom-type-ref" }
+        {
+          "include": "#custom-type-ref"
+        }
       ]
     },
     "ignore-spaces": {
@@ -132,40 +160,70 @@
     "param": {
       "begin": "\\s*([a-z0-9_]*)\\s*(:)",
       "beginCaptures": {
-        "1": { "name": "variable.other.esdl" },
-        "2": { "name": "punctuation.colon.esdl" }
+        "1": {
+          "name": "variable.other.esl"
+        },
+        "2": {
+          "name": "punctuation.colon.esl"
+        }
       },
       "end": "(?=,|\\))",
-      "patterns": [{ "include": "#type-ref" }]
+      "patterns": [
+        {
+          "include": "#type-ref"
+        }
+      ]
     },
     "field": {
       "begin": "\\s*([a-z0-9_]*)\\s*(:)",
       "beginCaptures": {
-        "1": { "name": "variable.other.esdl" },
-        "2": { "name": "punctuation.colon.esdl" }
+        "1": {
+          "name": "variable.other.esl"
+        },
+        "2": {
+          "name": "punctuation.colon.esl"
+        }
       },
       "end": "\\n",
-      "patterns": [{ "include": "#type-ref" }]
+      "patterns": [
+        {
+          "include": "#type-ref"
+        }
+      ]
     },
     "type-ref": {
       "patterns": [
         {
           "begin": "(\\[)\\s*",
           "beginCaptures": {
-            "1": { "name": "meta.brace.square.esdl" }
+            "1": {
+              "name": "meta.brace.square.esl"
+            }
           },
           "end": "\\s*(\\])(?:\\s*(!))?",
           "endCaptures": {
-            "1": { "name": "meta.brace.square.esdl" },
-            "2": { "name": "keyword.operator.nulltype.esdl" }
+            "1": {
+              "name": "meta.brace.square.esl"
+            },
+            "2": {
+              "name": "keyword.operator.nulltype.esl"
+            }
           },
-          "patterns": [{ "include": "#type-ref" }]
+          "patterns": [
+            {
+              "include": "#type-ref"
+            }
+          ]
         },
         {
           "match": "\\s*\\b(Int|Float|String|Bool)\\b(?:\\s*(!))?",
           "captures": {
-            "1": { "name": "support.type.builtin.esdl" },
-            "2": { "name": "keyword.operator.nulltype.esdl" }
+            "1": {
+              "name": "support.type.builtin.esl"
+            },
+            "2": {
+              "name": "keyword.operator.nulltype.esl"
+            }
           }
         },
         {
@@ -176,10 +234,14 @@
     "custom-type-ref": {
       "match": "\\s*([A-Z][A-Za-z0-9]*)\\s*(!)?",
       "captures": {
-        "1": { "name": "support.type.custom.esdl" },
-        "2": { "name": "keyword.operator.nulltype.esdl" }
+        "1": {
+          "name": "support.type.custom.esl"
+        },
+        "2": {
+          "name": "keyword.operator.nulltype.esl"
+        }
       }
     }
   },
-  "scopeName": "source.esdl"
+  "scopeName": "source.esl"
 }
