@@ -89,7 +89,7 @@
         "1": { "name": "entity.name.function.esdl" },
         "2": { "name": "meta.brace.round.esdl" }
       },
-      "end": "\\s*(\\))(?=:)",
+      "end": "\\s*(\\))(?=\\s*->)",
       "endCaptures": {
         "1": { "name": "meta.brace.round.esdl" }
       },
@@ -100,7 +100,7 @@
       "patterns": [{ "include": "#param" }]
     },
     "command-return": {
-      "begin": "(:)\\s*",
+      "begin": "(->)\\s*",
       "beginCaptures": {
         "1": {
           "name": "punctuation.colon.esdl"
