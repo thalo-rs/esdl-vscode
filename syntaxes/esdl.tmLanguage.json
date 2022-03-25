@@ -169,7 +169,11 @@
           }
         },
         {
-          "include": "#custom-type-ref"
+          "match": "\\s*([A-Z][A-Za-z0-9]*)(?:\\s*(!))?",
+          "captures": {
+            "1": { "name": "support.type.custom.esdl" },
+            "2": { "name": "keyword.operator.nulltype.esdl" }
+          }
         }
       ]
     },
